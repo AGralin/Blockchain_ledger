@@ -47,7 +47,7 @@ class Record:
 class Block:
 
     # Rename the `data` attribute to `record`, and set the data type to `Record`
-    record: Record
+    record: Record(sender="0", receiver="0", amount = 0.0)
 
     creator_id: int
     prev_hash: str = "0"
@@ -146,13 +146,13 @@ pychain = setup()
 # input_data = st.text_input("Block Data")
 
 # Add an input area where you can get a value for `sender` from the user.
-Record = st.text_input("sender")
+sender = st.text_input("sender")
 
 # Add an input area where you can get a value for `receiver` from the user.
-Record = st.text_input("receiver")
+receiver = st.text_input("receiver")
 
 # Add an input area where you can get a value for `amount` from the user.
-Record = st.text_input("amount")
+amount = st.text_input("amount")
 
 if st.button("Add Block"):
     prev_block = pychain.chain[-1]
@@ -162,7 +162,7 @@ if st.button("Add Block"):
     # which is set equal to a `Record` that contains the `sender`, `receiver`,
     # and `amount` values
     new_block = Block(
-        record=Record,
+        record=Record(sender, receiver, amount),
         creator_id=42,
         prev_hash=prev_block_hash
     )

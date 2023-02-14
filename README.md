@@ -1,9 +1,9 @@
 # Blockchain_ledger
 ---
 
-![Ledger](Ledger.png)
+![Ledger](./Images/Ledger.png)
 
 
 ---
 
-![Transactions](Transactions.png)
+![Transactions](./Images/Transactions.png)
